@@ -1,0 +1,39 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: servica-a-network-policy
+  namespace: ns-demo-app
+spec:
+  podSelector:
+    matchLabels:
+      app: service-a-app
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              project: ns-demo-app
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/part-of: ingress-nginx
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: servica-b-network-policy
+  namespace: ns-demo-app
+spec:
+  podSelector:
+    matchLabels:
+      app: service-b-app
+  policyTypes:
+    - Ingress
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              project: ns-demo-app
+        - podSelector:
+            matchLabels:
+              app.kubernetes.io/part-of: ingress-nginx

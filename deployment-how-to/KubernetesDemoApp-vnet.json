@@ -1,0 +1,33 @@
+{
+    "name": "KubernetesDemoApp-vnet",
+    "id": "/subscriptions/d5b9df0f-6e8b-4aa2-b49c-ed209bf77ac1/resourceGroups/KubernetesDemoApp/providers/Microsoft.Network/virtualNetworks/KubernetesDemoApp-vnet",
+    "etag": "W/\"8326936a-26cf-470b-bd37-f3417b3e5e46\"",
+    "type": "Microsoft.Network/virtualNetworks",
+    "location": "francecentral",
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "6cf7f71f-6f9a-43d2-8df8-6b8dce9dd630",
+        "addressSpace": {
+            "addressPrefixes": [
+                "10.0.0.0/16"
+            ]
+        },
+        "subnets": [
+            {
+                "name": "default",
+                "id": "/subscriptions/d5b9df0f-6e8b-4aa2-b49c-ed209bf77ac1/resourceGroups/KubernetesDemoApp/providers/Microsoft.Network/virtualNetworks/KubernetesDemoApp-vnet/subnets/default",
+                "etag": "W/\"8326936a-26cf-470b-bd37-f3417b3e5e46\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefix": "10.0.0.0/24",
+                    "ipConfigurations": [
+                        {
+                            "id": "/subscriptions/d5b9df0f-6e8b-4aa2-b49c-ed209bf77ac1/resourceGroups/KubernetesDemoApp/providers/Microsoft.Network/networkInterfaces/clientvm628/ipConfigurations/ipconfig1"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            }
+        ]
+    }
+}

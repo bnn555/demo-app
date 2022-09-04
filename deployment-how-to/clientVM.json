@@ -1,0 +1,76 @@
+{
+    "name": "clientVM",
+    "id": "/subscriptions/d5b9df0f-6e8b-4aa2-b49c-ed209bf77ac1/resourceGroups/KubernetesDemoApp/providers/Microsoft.Compute/virtualMachines/clientVM",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "francecentral",
+    "identity": {
+        "type": "SystemAssigned",
+        "principalId": "869cefc4-cae4-4df5-935f-2346b28e806e",
+        "tenantId": "cb648f4c-53a3-4285-bccb-a26f21181c5b"
+    },
+    "properties": {
+        "vmId": "91b5a11f-9ee8-4dd0-8f5f-0320efa08605",
+        "hardwareProfile": {
+            "vmSize": "Standard_B2ms"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "canonical",
+                "offer": "0001-com-ubuntu-server-focal",
+                "sku": "20_04-lts-gen2",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Linux",
+                "name": "clientVM_OsDisk_1_c48e39439f6e45adb1208d61f52d0e01",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "Premium_LRS",
+                    "id": "/subscriptions/d5b9df0f-6e8b-4aa2-b49c-ed209bf77ac1/resourceGroups/KUBERNETESDEMOAPP/providers/Microsoft.Compute/disks/clientVM_OsDisk_1_c48e39439f6e45adb1208d61f52d0e01"
+                },
+                "diskSizeGB": 30
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "clientVM",
+            "adminUsername": "NicolaeDemoApp",
+            "linuxConfiguration": {
+                "disablePasswordAuthentication": false
+            },
+            "secrets": []
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/d5b9df0f-6e8b-4aa2-b49c-ed209bf77ac1/resourceGroups/KubernetesDemoApp/providers/Microsoft.Network/networkInterfaces/clientvm628",
+                    "properties": {
+                        "deleteOption": "Delete"
+                    }
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "provisioningState": "Succeeded"
+    },
+    "resources": [
+        {
+            "name": "AADSSHLoginForLinux",
+            "id": "/subscriptions/d5b9df0f-6e8b-4aa2-b49c-ed209bf77ac1/resourceGroups/KubernetesDemoApp/providers/Microsoft.Compute/virtualMachines/clientVM/extensions/AADSSHLoginForLinux",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "location": "francecentral",
+            "properties": {
+                "autoUpgradeMinorVersion": true,
+                "provisioningState": "Succeeded",
+                "publisher": "Microsoft.Azure.ActiveDirectory",
+                "type": "AADSSHLoginForLinux",
+                "typeHandlerVersion": "1.0"
+            }
+        }
+    ]
+}

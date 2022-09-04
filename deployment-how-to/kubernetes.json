@@ -1,0 +1,31 @@
+{
+    "apiVersion": "vlabs",
+    "properties": {
+        "masterProfile": {
+            "count": 1,
+            "dnsPrefix": "nicolae-demo-app",
+            "vmSize": "Standard_B2ms",
+            "distro": "ubuntu-18.04"
+        },
+        "agentPoolProfiles": [
+            {
+                "name": "agentpool1",
+                "count": 1,
+                "vmSize": "Standard_B2ms",
+                "distro": "ubuntu-18.04"
+            }
+        ],
+        "linuxProfile": {
+            "runUnattendedUpgradesOnBootstrap": false,
+            "enableUnattendedUpgrades": true,
+            "adminUsername": "demoappadmin",
+            "ssh": {
+                "publicKeys": [
+                    {
+                        "keyData": ""
+                    }
+                ]
+            }
+        }
+    }
+}
